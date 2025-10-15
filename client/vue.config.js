@@ -9,7 +9,7 @@ module.exports = defineConfig({
     proxy: {
       // Proxy API calls to Flask backend in development to avoid CORS
       '^/(extract|analyze|visualize)': {
-        target: process.env.VUE_APP_API_BASE_URL || 'http://localhost:5000',
+        target: process.env.VUE_APP_API_BASE_URL || 'http://localhost:8000',
         changeOrigin: true,
         ws: false,
       },

@@ -2,7 +2,7 @@
 // Reads base URL from VUE_APP_API_BASE_URL or defaults to localhost:5000
 import axios from 'axios';
 
-const baseURL = process.env.VUE_APP_API_BASE_URL || 'http://localhost:5000';
+const baseURL = process.env.VUE_APP_API_BASE_URL || 'http://localhost:8000';
 
 const http = axios.create({
   baseURL,
