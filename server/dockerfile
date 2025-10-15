@@ -1,0 +1,27 @@
+# Use an official Python runtime as a base image
+FROM python:3.9-slim
+
+# Set the working directory in the container
+WORKDIR /app
+
+# Copy the current directory contents into the container at /app
+COPY . /app
+
+# Install any needed packages specified in requirements.txt
+RUN pip install --upgrade pip && \
+    pip install -r requirements.txt
+
+# Download NLTK resources in the Docker image
+#RUN python -m nltk.downloader stopwords vader_lexicon punkt wordnet
+
+# Make the port 8000 available to the world outside this container (optional, if you are using a web app)
+# EXPOSE 8000
+
+
+# Copy the .env file
+COPY .env /app/.env
+
+   
+
+# Run main.py when the container launches
+CMD ["python", "main.py"]
